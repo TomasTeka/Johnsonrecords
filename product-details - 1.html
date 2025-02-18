@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Peoducts Detail </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Darkmode.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" 
+     rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Images/jhon.png" width="125px"> 
+            </a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="Biography.html">BIOGRAPHY</a></li>
+                <li><a href="music.html">MEDIA</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="Account.html">LOGIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+                <label for="darkModeToggle" class="toggle-label">
+                    <span class="toggle-handle"></span>
+                    <span class="toggle-icon sun">☀️</span>
+                    <span class="toggle-icon moon">🌙</span>
+                </label>
+            </div>
+        </nav>
+        <a href="cart.html">
+            <img src="Images/cart 2.png" width="30px" height="30px">
+         </a>
+        <img src="Images/mm.png" class="menu-icon" onclick="menutoggle()">
+
+    </div>
+   
+</div>
+
+
+
+<!-------single Product review---------->
+
+<div class="small-container single-Product">
+    <div class="row">
+        <div class="col-2">
+            <img src="Images/Products/0 (3).jpg"              width="100%" id="ProductImg">
+            <div class="small-img-row">
+                <div class="small-img-col">
+                    <img src="Images/Products/the/0 (3).jpg"        width="100%" class="SmallImg">
+                </div>
+                <div class="small-img-col">
+                    <img src="Images/Products/the/01.jpg"       width="100%" class="SmallImg">
+                </div>
+                <div class="small-img-col">
+                    <img src="Images/Products/the/0 (2)1.jpg"         width="100%" class="SmallImg">
+                </div>
+                <div class="small-img-col">
+                    <img src="Images/Products/the/00.jpg" width="100%" class="SmallImg">
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <p>Home / T-Shirt </p>
+            <h1> The Weeknd Photo Printed T-Shirt</h1>
+            <h4 id="productPrice">£49.99</h4>
+            <select id="productSize">
+                <option> SELECT SIZE</option>
+                <option> SMALL</option>
+                <option> MEDIUM</option>
+                <option> LARGE</option>
+                <option> XL</option>
+                <option> XXL</option>
+            </select>
+            <input type="number" value="1" id="productQuantity">
+            <a href="javascript:void(0);" id="addToCartButton"  class="btn">ADD TO CART</a>
+            <h3>Product Details <i class="fa fa-indent"></i></h3>
+            <br>
+            <p>Our premium music-themed T-shirt is the perfect blend of style,
+                 comfort, and passion for music. Made from 100% soft cotton, 
+                 it offers a lightweight, breathable fit, ideal for everyday wear.🎵🔥</p>
+        </div>
+    </div>
+
+
+
+
+
+
+<!--------------footer------------->
+
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios Mobile Phone</p>
+                    <div class="app-logo">
+                        <a href="https://store.google.com/">
+                            <img src="Images/Products/new g.png"> </a>
+                        <a href="https://www.apple.com/uk/app-store/">
+                            <img src="Images/Products/new a.png"></a>
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <a href="index.html">
+                        <img src="Images/jhon1.png">
+                    </a>
+                    <p>Discover, explore, and celebrate the world of music with our blog—a hub for music 
+                        lovers to find insights, reviews, and the latest trends, </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <a href="index.html">
+                            <li>Home</li></a>
+                        <a href="About.html">
+                            <li>About Us</li></a>
+                        <a href="Contact.html">
+                            <li>Contact Us</li></a>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <a href="https://www.facebook.com/">
+                            <li>Facebook</li> </a>
+                        <a href="https://x.com/home?lang=en">
+                            <li>Twitter</li></a>
+                        <a href="https://www.instagram.com/">
+                            <li>Instagram</li></a>
+                        <a href="https://www.youtube.com/">
+                            <li>Youtube</li></a>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2025 - Tomas Teka</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!----add cart new -->
+
+<script>
+document.getElementById('addToCartButton').addEventListener('click', function() {
+    // Get the product details from the page
+    const productImage = document.getElementById('ProductImg').src;
+    const productName = document.querySelector('h1').textContent;
+    const productPrice = parseFloat(document.getElementById('productPrice').textContent.replace('£', ''));
+    const productSize = document.getElementById('productSize').value;
+    const productQuantity = parseInt(document.getElementById('productQuantity').value, 10);
+
+    // Validation: check if size is selected
+    if (productSize === "Select Size") {
+        alert("Please select a size.");
+        return;
+    }
+
+    // Calculate subtotal for this product
+    const productSubtotal = productPrice * productQuantity;
+
+    // Create a product object to store in the cart
+    const product = {
+        name: productName,
+        image: productImage,
+        price: productPrice,
+        size: productSize,
+        quantity: productQuantity,
+        subtotal: productSubtotal,
+    };
+
+    // Get cart data from localStorage (if it exists)
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the new product to the cart
+    cart.push(product);
+
+    // Save updated cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Notify the user the product has been added to cart
+    alert(`${productName} has been added to your cart.`);
+});
+
+</script>
+
+<!--------Js for toggle menu------->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var menuItems = document.getElementById("MenuItems");
+
+        function menutoggle() {
+            if (menuItems.style.maxHeight === "0px" || menuItems.style.maxHeight === "") {
+                menuItems.style.maxHeight = menuItems.scrollHeight + "px";
+            } else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+
+        document.querySelector(".menu-icon").addEventListener("click", menutoggle);
+
+        // Smooth scroll to section when clicking a menu item
+        document.querySelectorAll("nav ul li a").forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                
+                var targetSection = document.querySelector(this.getAttribute("href"));
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+
+                // Close menu on mobile after clicking
+                menuItems.style.maxHeight = "0px";
+            });
+        });
+    });
+</script>
+
+
+
+<!--------Js for product gallary------->
+
+<script>
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("SmallImg")
+        
+      SmallImg[0].onclick = function()
+      {
+        ProductImg.src = SmallImg[0].src;
+      }
+      SmallImg[1].onclick = function()
+      {
+        ProductImg.src = SmallImg[1].src;
+      }
+      SmallImg[2].onclick = function()
+      {
+        ProductImg.src = SmallImg[2].src;
+      }
+      SmallImg[3].onclick = function()
+      {
+        ProductImg.src = SmallImg[3].src;
+      }
+      
+</script>
+
+
+
+
+
+
+
+<!---------------Dark mode------>
+<script>
+    const toggleCheckbox = document.getElementById('darkModeToggle');
+ 
+ toggleCheckbox.addEventListener('change', function() {
+     document.body.classList.toggle('dark-mode');
+ 
+     // Save user preference in localStorage
+     if (document.body.classList.contains('dark-mode')) {
+         localStorage.setItem('theme', 'dark');
+     } else {
+         localStorage.setItem('theme', 'light');
+     }
+ });
+ 
+ // Check for saved user preference on page load
+ window.addEventListener('load', function() {
+     const savedTheme = localStorage.getItem('theme');
+ 
+     if (savedTheme === 'dark') {
+         document.body.classList.add('dark-mode');
+         toggleCheckbox.checked = true;
+     } else {
+         document.body.classList.remove('dark-mode');
+         toggleCheckbox.checked = false;
+     }
+ });
+ </script>
+
+
+</body>
+</html>

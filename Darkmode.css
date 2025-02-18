@@ -1,0 +1,249 @@
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode p,
+body.dark-mode a,
+body.dark-mode .title,
+body.dark-mode .artist-name,
+body.dark-mode .artist-info p,
+body.dark-mode .footer p,
+body.dark-mode .footer h3,
+body.dark-mode .footer a,
+body.dark-mode .col-2 h1,
+body.dark-mode .col-2 p,
+body.dark-mode .col-4 p,
+body.dark-mode .col-4 h4,
+body.dark-mode .single-Product h1,
+body.dark-mode .single-Product h4,
+body.dark-mode .single-Product p,
+body.dark-mode .cart-container h1,
+body.dark-mode .cart-container td,
+body.dark-mode .cart-container th,
+body.dark-mode .cart-container .summary p,
+body.dark-mode .music-card h3,
+body.dark-mode .music-card p,
+body.dark-mode .video-card h3,
+body.dark-mode .video-card p,
+body.dark-mode .price,
+body.dark-mode .new h1,
+body.dark-mode .section h2,
+body.dark-mode .section p,
+body.dark-mode .contact-header h1,
+body.dark-mode .contact-header p,
+body.dark-mode .info-box h2,
+body.dark-mode .info-box p,
+body.dark-mode .info-box a {
+    
+    color: #ffffff;
+}
+
+body.dark-mode .header,
+body.dark-mode .footer,
+body.dark-mode .navbar,
+body.dark-mode .section,
+body.dark-mode .cart-container,
+body.dark-mode .music-card,
+body.dark-mode .video-card,
+body.dark-mode .form-container,
+body.dark-mode .info-box,
+body.dark-mode .artist-container,
+body.dark-mode .single-Product,
+body.dark-mode .contact-info {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .btn1,
+body.dark-mode .btn,
+body.dark-mode .add-to-cart,
+body.dark-mode .read-more-btn,
+body.dark-mode .form-group button,
+body.dark-mode .remove-btn,
+body.dark-mode .actions .btn {
+    background: #311255;
+    color: #ffffff;
+}
+
+body.dark-mode .btn1:hover,
+body.dark-mode .btn:hover,
+body.dark-mode .add-to-cart:hover,
+body.dark-mode .read-more-btn:hover,
+body.dark-mode .form-group button:hover,
+body.dark-mode .remove-btn:hover,
+body.dark-mode .actions .btn:hover {
+    background: #2676dd;
+}
+
+body.dark-mode .footer {
+    background: #000;
+}
+
+body.dark-mode .menu-icon {
+    filter: invert(1);
+}
+
+body.dark-mode .title::after {
+    background: #ff523b;
+}
+
+body.dark-mode .rating .fa {
+    color: #ff523b;
+}
+
+body.dark-mode .cart-info img {
+    filter: brightness(0.8);
+}
+
+body.dark-mode .music-card {
+    background: #2c2c2c;
+}
+
+body.dark-mode .music-card h3,
+body.dark-mode .music-card p {
+    color: #ffffff;
+}
+
+body.dark-mode audio {
+    filter: invert(1);
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+    position: fixed;
+    display: inline-block;
+    top: 70px;
+    right: 350px;
+    margin-left: 20px;
+    z-index: 1000;
+}
+
+.toggle-checkbox {
+    display: none; /* Hide the default checkbox */
+}
+
+.toggle-label {
+    display: block;
+    width: 60px; /* Wider toggle for better spacing */
+    height: 30px;
+    background-color: #e0e0e0; /* Light mode background */
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid black;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-handle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-icon.sun {
+    left: 6px;
+    opacity: 1;
+}
+
+.toggle-icon.moon {
+    right: 6px;
+    opacity: 0;
+}
+
+/* Dark Mode Toggle Styles */
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #311255; /* Dark mode background color */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-handle {
+    transform: translateX(30px); /* Move handle to the right */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-icon.sun {
+    opacity: 0; /* Hide sun icon in dark mode */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-icon.moon {
+    opacity: 1; /* Show moon icon in dark mode */
+}
+
+
+
+
+
+body.dark-mode .gallery-section h2::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, #ffffff, #feb47b); /* Light gradient for dark mode */
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .gallery-section h2:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+@media (max-width: 600px) {
+    .theme-toggle {
+        top: 10px; /* Adjust position for smaller screens */
+        right: 10px;
+    }
+
+    .toggle-label {
+        width: 50px; /* Smaller toggle for mobile */
+        height: 25px;
+    }
+
+    .toggle-handle {
+        width: 20px; /* Smaller handle for mobile */
+        height: 20px;
+    }
+
+    .toggle-icon {
+        font-size: 12px; /* Smaller icons for mobile */
+    }
+}
+
+
+
+/* Default styles for logo and shopping cart icon */
+
+
+.navbar img {
+    filter: brightness(1); /* Default brightness */
+}
+
+
+body.dark-mode .navbar img {
+    filter: brightness(0.8) invert(1); /* Invert colors for dark mode */
+}
+

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Darkmode.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" 
+     rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Images/jhon.png" width="125px"> 
+            </a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="Biography.html">BIOGRAPHY</a></li>
+                <li><a href="music.html">MEDIA</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+               
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="Account.html">LOGIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+                <label for="darkModeToggle" class="toggle-label">
+                    <span class="toggle-handle"></span>
+                    <span class="toggle-icon sun">☀️</span>
+                    <span class="toggle-icon moon">🌙</span>
+                </label>
+            </div>
+        </nav>
+        <a href="cart.html">
+            <img src="Images/cart 2.png" width="30px" height="30px">
+         </a>
+        <img src="Images/mm.png" class="menu-icon" onclick="menutoggle()">
+
+    </div>
+   
+</div>
+
+<!--------------cart item details------------->
+<div class="cart-container">
+        <h1>Your Cart</h1>
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product rows will be inserted dynamically -->
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <div class="summary">
+                <p><strong>Total:</strong> £<span id="totalPrice">0.00</span></p>
+            </div>
+
+            <div class="actions">
+                <button class="btn" onclick="checkout()">Proceed to Checkout</button>
+                <button class="btn" onclick="clearCart()">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!--------------footer------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios Mobile Phone</p>
+                    <div class="app-logo">
+                        <a href="https://store.google.com/">
+                            <img src="Images/Products/new g.png"> </a>
+                        <a href="https://www.apple.com/uk/app-store/">
+                            <img src="Images/Products/new a.png"></a>
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <a href="index.html">
+                        <img src="Images/jhon1.png">
+                    </a>
+                    <p>Discover, explore, and celebrate the world of music with our blog—a hub for music 
+                        lovers to find insights, reviews, and the latest trends, </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <a href="index.html">
+                            <li>Home</li></a>
+                        <a href="About.html">
+                            <li>About Us</li></a>
+                        <a href="Contact.html">
+                            <li>Contact Us</li></a>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <a href="https://www.facebook.com/">
+                            <li>Facebook</li> </a>
+                        <a href="https://x.com/home?lang=en">
+                            <li>Twitter</li></a>
+                        <a href="https://www.instagram.com/">
+                            <li>Instagram</li></a>
+                        <a href="https://www.youtube.com/">
+                            <li>Youtube</li></a>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2025 - Tomas Teka</p>
+    </div>
+</div>
+
+
+
+
+
+
+<!--------------------cart fuction   -->
+
+<script>
+    // Example cart data from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function loadCart() {
+        let total = 0;
+        const cartTable = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
+        cartTable.innerHTML = ""; // Clear current table rows
+
+        cart.forEach((product, index) => {
+            const row = cartTable.insertRow();
+
+            const productCell = row.insertCell(0);
+            const quantityCell = row.insertCell(1);
+            const priceCell = row.insertCell(2);
+            const subtotalCell = row.insertCell(3);
+            const actionCell = row.insertCell(4);
+
+            productCell.innerHTML = `
+                <div class="cart-info">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div>
+                        <p>${product.name}</p>
+                        <small>£${product.price.toFixed(2)}</small>
+                    </div>
+                </div>
+            `;
+            quantityCell.innerHTML = `
+                <input type="number" value="${product.quantity}" min="1" 
+                onchange="updateQuantity(${index}, this.value)">
+            `;
+            priceCell.innerHTML = `£${product.price.toFixed(2)}`;
+            subtotalCell.innerHTML = `£${product.subtotal.toFixed(2)}`;
+            actionCell.innerHTML = `<button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>`;
+
+            total += product.subtotal;
+        });
+
+        document.getElementById('totalPrice').textContent = total.toFixed(2);
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1); // Remove product from the cart
+        localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+        loadCart(); // Reload cart display
+    }
+
+    function updateQuantity(index, quantity) {
+        quantity = parseInt(quantity, 10);
+
+        // Prevent negative or zero quantity
+        if (isNaN(quantity) || quantity < 1) {
+            quantity = 1;
+        }
+
+        cart[index].quantity = quantity;
+        cart[index].subtotal = cart[index].price * quantity;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart(); // Update the cart with the new subtotal
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        cart = [];
+        loadCart();
+    }
+
+    function checkout() {
+        if (cart.length === 0) {
+            alert("Your cart is empty.");
+            return;
+        }
+
+        alert("Proceeding to checkout...");
+        // Redirect to checkout page or payment gateway
+        // window.location.href = "payment.html";
+    }
+
+    // Load cart when the page loads
+    window.onload = loadCart;
+</script>
+
+
+
+
+<!--------Js for toggle menu------->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var menuItems = document.getElementById("MenuItems");
+
+        function menutoggle() {
+            if (menuItems.style.maxHeight === "0px" || menuItems.style.maxHeight === "") {
+                menuItems.style.maxHeight = menuItems.scrollHeight + "px";
+            } else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+
+        document.querySelector(".menu-icon").addEventListener("click", menutoggle);
+
+        // Smooth scroll to section when clicking a menu item
+        document.querySelectorAll("nav ul li a").forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                var targetSection = document.querySelector(this.getAttribute("href"));
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+
+                // Close menu on mobile after clicking
+                menuItems.style.maxHeight = "0px";
+            });
+        });
+    });
+</script>
+
+<!--  transition-------------------------->
+
+<script>
+    function smoothTransition() {
+    // Add the transition class to the body for the fade-out effect
+    document.body.classList.add('page-transition-hidden');
+    
+    // After the transition time (500ms), navigate to the new page
+    setTimeout(function() {
+        window.location.href = window.location.href; // Redirect to the next page
+    }, 500); // Match this time with the CSS transition duration
+}
+
+// Listen for clicks on links to trigger the page transition
+document.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link click
+        var href = this.getAttribute('href'); // Get the link destination
+        
+        // Trigger the transition and navigate after it's done
+        smoothTransition();
+        
+        // Use setTimeout to delay the navigation until the transition is complete
+        setTimeout(function() {
+            window.location.href = href;
+        }, 500); // Match the CSS transition duration here as well
+    });
+});
+
+// Make sure the page has a smooth transition when it loads
+window.addEventListener('load', function() {
+    document.body.classList.remove('page-transition-hidden');
+});
+</script>
+
+<!---------------Dark mode------>
+<script>
+    const toggleCheckbox = document.getElementById('darkModeToggle');
+ 
+ toggleCheckbox.addEventListener('change', function() {
+     document.body.classList.toggle('dark-mode');
+ 
+     // Save user preference in localStorage
+     if (document.body.classList.contains('dark-mode')) {
+         localStorage.setItem('theme', 'dark');
+     } else {
+         localStorage.setItem('theme', 'light');
+     }
+ });
+ 
+ // Check for saved user preference on page load
+ window.addEventListener('load', function() {
+     const savedTheme = localStorage.getItem('theme');
+ 
+     if (savedTheme === 'dark') {
+         document.body.classList.add('dark-mode');
+         toggleCheckbox.checked = true;
+     } else {
+         document.body.classList.remove('dark-mode');
+         toggleCheckbox.checked = false;
+     }
+ });
+ </script>
+
+</body>
+</html>

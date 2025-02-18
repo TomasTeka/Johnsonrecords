@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Darkmode.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" 
+     rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Images/jhon.png" width="125px"> 
+            </a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="Biography.html">BIOGRAPHY</a></li>
+                <li><a href="music.html">MEDIA</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="Account.html">LOGIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+                <label for="darkModeToggle" class="toggle-label">
+                    <span class="toggle-handle"></span>
+                    <span class="toggle-icon sun">☀️</span>
+                    <span class="toggle-icon moon">🌙</span>
+                </label>
+            </div>
+        </nav>
+        <a href="cart.html">
+        <img src="Images/cart 2.png" width="30px" height="30px">
+     </a>
+        <img src="Images/mm.png" class="menu-icon" onclick="menutoggle()">
+
+    </div>
+   
+</div>
+
+
+
+
+<div class="container-artist">
+    <h1>Meet the Artists</h1>
+
+    <!-- Artist 1 -->
+    <div class="artist-container" id="the-weeknd">
+        <img src="Images/T (14).jpg" data-hover="Images/tt.jpg" alt="Artist 1" class="artist-image">
+        <div class="artist-info">
+            <h2>The Weeknd</h2>
+            <p>Abel Makkonen Tesfaye, known professionally as The Weeknd, 
+                is a Canadian singer, songwriter, and record producer. He first gained recognition in 2010 when he anonymously 
+                uploaded several songs to YouTube, which quickly garnered a dedicated fan base. His unique sound, blending R&B,
+                 pop, and electronic music, has made him one of the most influential artists of the 21st century. His breakthrough 
+                 came with the release of his mixtapes House of Balloons, Thursday, and Echoes of Silence, which earned critical acclaim 
+                 and laid the foundation for his rise to stardom. Throughout his career, The Weeknd has continuously pushed boundaries with 
+                 his genre-defying music, innovative visuals, and dynamic performances..</p>
+            <button class="read-more-btn" onclick="toggleBio(0)">Read More</button>
+            <div class="full-bio" id="bio-0">
+                <p>Over the years, The Weeknd has achieved international success with numerous chart-topping hits, including 
+                    "Can't Feel My Face," "Blinding Lights," and "Starboy." Known for his distinctive falsetto voice, he has earned several
+                     prestigious accolades, including Grammy Awards, American Music Awards, and Billboard Music Awards. His ability to create
+                      music that resonates with both mainstream audiences and critics alike has made him an icon in the music industry. Additionally, he has been a vocal
+                     advocate for social issues and mental health awareness, using his platform to make a significant impact beyond music.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artist 2 -->
+    <div class="artist-container" id="khalid-1">
+        <img src="Images/1 (4).jpg" data-hover="Images/kk.jpg" alt="Artist 2" class="artist-image">
+        <div class="artist-info">
+            <h2>Khalid</h2>
+            <p>Khalid, born Khalid Donnel Robinson on February 11, 
+                1998, is an American singer and songwriter who has quickly 
+                become one of the most recognizable voices in contemporary R&B and
+                 pop music. Raised in El Paso, Texas, Khalid’s music is deeply influenced
+                  by his diverse cultural background and his experiences growing up. He rose to 
+                  prominence with the release of his debut single "Location" in 2016, which became a viral sensation. Khalid's sound blends elements of soul, R&B, 
+                and alternative music, and his laid-back style and raw, emotive lyrics have resonated with listeners worldwide.</p>
+            <button class="read-more-btn" onclick="toggleBio(1)">Read More</button>
+            <div class="full-bio" id="bio-1">
+                <p>His debut album, American Teen, released in 2017, earned critical acclaim and established him as a major force in the music industry. Khalid’s 
+                    ability to weave personal stories into universally relatable themes of youth, love, and self-discovery has garnered him a loyal fanbase. Over 
+                    the years, he has continued to evolve as an artist, collaborating with top musicians across genres, and his music continues to chart on global platforms. 
+                    Known for his soulful voice and relatable lyrics, Khalid is a defining voice of his generation, and his journey in the music industry is just beginning.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artist 3 -->
+    <div class="artist-container" id="burna-boy">
+        <img src="Images/bb.jpg" data-hover="Images/b.jpg" alt="Artist 3" class="artist-image">
+        <div class="artist-info">
+            <h2>Burna Boy</h2>
+            <p>Burna Boy is a Nigerian singer, songwriter, and Afro-fusion 
+                artist known for blending Afrobeat, dancehall, reggae, and pop
+                influences into a unique sound that resonates globally. Born as Damini
+                 Ebunoluwa Ogulu on July 2, 1991, in Port Harcourt, Nigeria, Burna Boy's 
+                 rise to international fame began with his breakthrough single "Like to Party" 
+                 in 2012. His powerful voice, distinct sound, and the fusion of genres quickly
+                  captivated listeners, earning him recognition in both the African and international music scenes. With albums
+                   like African Giant (2019) and Twice as Tall (2020), 
+                Burna Boy's music reflects his Nigerian roots, addressing themes of African pride, social issues, and personal growth.</p>
+            <button class="read-more-btn" onclick="toggleBio(2)">Read More</button>
+            <div class="full-bio" id="bio-2">
+                <p>Burna Boy’s unique blend of Afrobeat, pop, and 
+                    world music has earned him numerous accolades, 
+                    including a Grammy Award for Best Global Music 
+                    Album in 2021. His ability to fuse African rhythms
+                     with global sounds has earned him a diverse fanbase 
+                     worldwide. Known for his electrifying performances and bold 
+                     lyrics, Burna Boy has become a cultural ambassador for Afrobeat music,
+                      pushing African music to new global heights. With his unyielding passion for his heritage
+                     and his relentless drive to make an impact 
+                     on the world stage, Burna Boy continues to inspire millions through his music and activism.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    html {
+    scroll-behavior: smooth;
+}
+</style>
+
+
+
+
+
+
+
+<!--------------footer------------->
+
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios Mobile Phone</p>
+                    <div class="app-logo">
+                        <a href="https://store.google.com/">
+                            <img src="Images/Products/new g.png"> </a>
+                        <a href="https://www.apple.com/uk/app-store/">
+                            <img src="Images/Products/new a.png"></a>
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <a href="index.html">
+                        <img src="Images/jhon1.png">
+                    </a>
+                    <p>Discover, explore, and celebrate the world of music with our blog—a hub for music 
+                        lovers to find insights, reviews, and the latest trends, </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <a href="index.html">
+                            <li>Home</li></a>
+                        <a href="About.html">
+                            <li>About Us</li></a>
+                        <a href="Contact.html">
+                            <li>Contact Us</li></a>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <a href="https://www.facebook.com/">
+                            <li>Facebook</li> </a>
+                        <a href="https://x.com/home?lang=en">
+                            <li>Twitter</li></a>
+                        <a href="https://www.instagram.com/">
+                            <li>Instagram</li></a>
+                        <a href="https://www.youtube.com/">
+                            <li>Youtube</li></a>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2025 - Tomas Teka</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Go to Top Button and script -->
+<button id="goToTopBtn" onclick="goToTop()">Go to Top</button>
+
+
+<script>
+    var goToTopBtn = document.getElementById("goToTopBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        goToTopBtn.style.display = "block"; // Show the button
+    } else {
+        goToTopBtn.style.display = "none"; // Hide the button
+    }
+};
+
+// When the user clicks the button, scroll to the top of the page
+function goToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}s
+</script>
+
+
+
+
+
+
+
+<!----------read more ------------->
+
+<script>
+    // JavaScript to toggle the "Read More" section
+    function toggleBio(artistId) {
+        var bioSection = document.getElementById('bio-' + artistId);
+        var button = document.getElementsByClassName('read-more-btn')[artistId];
+
+        if (bioSection.style.display === 'none' || bioSection.style.display === '') {
+            bioSection.style.display = 'block';
+            button.innerHTML = 'Read Less';
+        } else {
+            bioSection.style.display = 'none';
+            button.innerHTML = 'Read More';
+        }
+    }
+</script>
+
+
+
+<script>
+    function smoothTransition() {
+    // Add the transition class to the body for the fade-out effect
+    document.body.classList.add('page-transition-hidden');
+    
+    // After the transition time (500ms), navigate to the new page
+    setTimeout(function() {
+        window.location.href = window.location.href; // Redirect to the next page
+    }, 500); // Match this time with the CSS transition duration
+}
+
+// Listen for clicks on links to trigger the page transition
+document.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link click
+        var href = this.getAttribute('href'); // Get the link destination
+        
+        // Trigger the transition and navigate after it's done
+        smoothTransition();
+        
+        // Use setTimeout to delay the navigation until the transition is complete
+        setTimeout(function() {
+            window.location.href = href;
+        }, 500); // Match the CSS transition duration here as well
+    });
+});
+
+// Make sure the page has a smooth transition when it loads
+window.addEventListener('load', function() {
+    document.body.classList.remove('page-transition-hidden');
+});
+</script>
+
+
+
+
+<!--------Js for toggle menu------->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var menuItems = document.getElementById("MenuItems");
+
+        function menutoggle() {
+            if (menuItems.style.maxHeight === "0px" || menuItems.style.maxHeight === "") {
+                menuItems.style.maxHeight = menuItems.scrollHeight + "px";
+            } else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+
+        document.querySelector(".menu-icon").addEventListener("click", menutoggle);
+
+        // Smooth scroll to section when clicking a menu item
+        document.querySelectorAll("nav ul li a").forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                var targetSection = document.querySelector(this.getAttribute("href"));
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+
+                // Close menu on mobile after clicking
+                menuItems.style.maxHeight = "0px";
+            });
+        });
+    });
+</script>
+
+
+
+
+<!---------------Dark mode------>
+<script>
+    const toggleCheckbox = document.getElementById('darkModeToggle');
+ 
+ toggleCheckbox.addEventListener('change', function() {
+     document.body.classList.toggle('dark-mode');
+ 
+     // Save user preference in localStorage
+     if (document.body.classList.contains('dark-mode')) {
+         localStorage.setItem('theme', 'dark');
+     } else {
+         localStorage.setItem('theme', 'light');
+     }
+ });
+ 
+ // Check for saved user preference on page load
+ window.addEventListener('load', function() {
+     const savedTheme = localStorage.getItem('theme');
+ 
+     if (savedTheme === 'dark') {
+         document.body.classList.add('dark-mode');
+         toggleCheckbox.checked = true;
+     } else {
+         document.body.classList.remove('dark-mode');
+         toggleCheckbox.checked = false;
+     }
+ });
+ </script>
+
+
+
+
+<!----------------image rollover--------------------->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.artist-image');
+
+    images.forEach(image => {
+        const originalSrc = image.src;
+        const hoverSrc = image.getAttribute('data-hover');
+
+        image.addEventListener('mouseenter', () => {
+            image.src = hoverSrc;
+        });
+
+        image.addEventListener('mouseleave', () => {
+            image.src = originalSrc;
+        });
+    });
+});
+</script>
+
+</body>
+</html>
